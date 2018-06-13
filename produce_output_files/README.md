@@ -1,3 +1,5 @@
+To run this script open terminal and type "bash compilescript.sh".
+
 Make sure this script is in the same directory as your C++ solution file and input folder.
 
 This script will create a new output folder and generate all the output files corresponding to each input file from your C++ solution.

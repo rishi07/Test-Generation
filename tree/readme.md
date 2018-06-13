@@ -1,5 +1,7 @@
-Make sure testfile.cpp and testscript.sh are in the same directory.  
-To run the script, open terminal and type "bash testscript.sh".    
+To run the script, open terminal and type "bash testscript.sh".
+
+Make sure testfile.cpp and testscript.sh are in the same directory.
+
 This will create an "input" folder in the same directory which will contain the input files.
 
 You can change the constraints in the testfile.cpp to generate your own testcases.
