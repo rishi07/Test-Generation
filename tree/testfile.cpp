@@ -22,7 +22,7 @@ ll modexp(ll x,ll n)
     if(n%2==0)
     {
         ll y=modexp(x,n/2)%mod;
-        return (y*y)%mod; 
+        return (y*y)%mod;
     }
     return (x*modexp(x,n-1)%mod)%mod;
 }
