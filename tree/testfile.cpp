@@ -22,7 +22,7 @@ ll modexp(ll x,ll n)
     if(n%2==0)
     {
         ll y=modexp(x,n/2)%mod;
-        return (y*y)%mod;
+        return (y*y)%mod; 
     }
     return (x*modexp(x,n-1)%mod)%mod;
 }
@@ -106,6 +106,7 @@ void dfs(int i,int p)
 
 int main()
 {
+	mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 	//seed
 	srand(time(0));
 	
@@ -133,10 +134,12 @@ int main()
 
 		init(n);
 		int cnt=n-1;
+		int low = 1;
+		int high = n;
 		while(cnt)
 		{
-			int x=rand()%n+1;
-			int y=rand()%n+1;
+			int x=uniform_int_distribution<int>(low, high)(rng);
+			int y=uniform_int_distribution<int>(low, high)(rng);
 			if(query(x,y)==true)
 				continue;
 			join(x,y);
