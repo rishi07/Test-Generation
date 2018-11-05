@@ -93,8 +93,6 @@ vector<pair<int,int> > edges;
 int main()
 {
 	mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-	//seed
-	srand(time(0));
 	
 	//number of testcases you want to generate (supports at max 20 files upto input19.txt)
 	int testcases=5;
