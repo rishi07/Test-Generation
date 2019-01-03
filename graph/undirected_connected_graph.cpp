@@ -92,8 +92,7 @@ vector<pair<int,int> > edges;
 
 int main()
 {
-	//seed
-	srand(time(0));
+	mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 	
 	//number of testcases you want to generate (supports at max 20 files upto input19.txt)
 	int testcases=5;
@@ -125,10 +124,12 @@ int main()
 		
 		init(n);
 		int cnt=n-1;
+		int low = 1;
+		int high = n;
 		while(cnt)
 		{
-			int x=rand()%n+1;
-			int y=rand()%n+1;
+			int x=uniform_int_distribution<int>(low, high)(rng);
+			int y=uniform_int_distribution<int>(low, high)(rng);
 			if(query(x,y)==true)
 				continue;
 			connect.insert(mp(min(x,y),max(x,y)));
@@ -140,8 +141,8 @@ int main()
 
 		while(extra)
 		{
-			int x=rand()%n+1;
-			int y=rand()%n+1;
+			int x=uniform_int_distribution<int>(low, high)(rng);
+			int y=uniform_int_distribution<int>(low, high)(rng);
 			if(x==y||connect.count(mp(min(x,y),max(x,y))))
 				continue;
 			extra--;
